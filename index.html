@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Rate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@600&family=Manjari&family=Padauk&family=Rubik&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="title"> Calculate Bank Interest</div>
+    <div class="boxes">
+        <div class="box" id="heading">Account Number</div>
+        <div class="box" id="heading">Balance</div>
+        <div class="box" id="heading">On Interest</div>
+        <div class="box">094239775922</div>
+        <div class="box"><input type="text" id="text1" placeholder="Enter Your Balance"></textarea></div>
+        <div class="box" id="result1"></div>
+        <div class="box">093974275922</div>
+        <div class="box"><input type="text" id="text2" placeholder="Enter Your Balance"></div>
+        <div class="box" id="result2"></div>
+        <div class="box">094239775954</div>
+        <div class="box"><input type="text" id="text3" placeholder="Enter Your Balance"></div>
+        <div class="box" id="result3"></div>
+        <div class="box">0943539775922</div>
+        <div class="box"><input type="text" id="text4" placeholder="Enter Your Balance"></div>
+        <div class="box" id="result4"></div>
+        <div class="box">094239455922</div>
+        <div class="box"><input type="text" id="text5" placeholder="Enter Your Balance"></div>
+        <div class="box" id="result5"></div>
+    </div>
+    <div id = "button" onclick="calculate()">Calculate</div>
+    <div id="note">
+        Note*  : All the Above calculations are shown on basis of following slabs <br>
+        - Balance > 2 Lack : 10 % of intrest and deduct 0.2 % Maintanance Charge <br> 
+        - Balance > 1 Lack : 5 % of intrest and deduct 0.05 % Maintanance Charge  <br>
+        - Balance <= 1 Lack : 3 % of intrest and No Maintanance Charge <br>
+    </div>
+
+</div>
+
+<script>
+    var inputArea1 = document.getElementById('text1')
+    var inputArea2 = document.getElementById('text2')
+    var inputArea3 = document.getElementById('text3')
+    var inputArea4 = document.getElementById('text4')
+    var inputArea5 = document.getElementById('text5')
+
+   var resultArea1 = document.getElementById('result1')
+   var resultArea2 = document.getElementById('result2')
+   var resultArea3 = document.getElementById('result3')
+   var resultArea4 = document.getElementById('result4')
+   var resultArea5 = document.getElementById('result5')
+
+   var arr = [inputArea1.innerText,inputArea2.innerText,inputArea3.innerText,inputArea4.innerText,inputArea5.innerText,]
+
+   function calculateInterest(val){
+        var arr = Number(val)
+
+        if(arr > 200000){
+            arr += 0.1*arr
+            arr -= 0.002*arr
+        }
+        else if(arr > 100000){
+            arr += 0.05*arr
+            arr -= 0.0005*arr
+        }
+        else if(arr <= 100000){
+            arr += 0.03*arr
+        }
+        return arr
+}
+   
+   function calculate(){
+    resultArea1.innerText = calculateInterest(inputArea1.value)
+    resultArea2.innerText = calculateInterest(inputArea2.value)
+    resultArea3.innerText = calculateInterest(inputArea3.value)
+    resultArea4.innerText = calculateInterest(inputArea4.value)
+    resultArea5.innerText = calculateInterest(inputArea5.value)
+   }
+</script>
+</body>
+</html>
