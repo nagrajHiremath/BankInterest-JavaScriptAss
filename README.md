@@ -1,4 +1,4 @@
-# Bank Interest Calculation
-Simple Photo Gallery Page created using JavaScript concepts.
+# Bank Interest Calculation Table
 
-<a href = "https://nagrajhiremath.github.io/Photo-Gallery-JavaScriptEx02/">**Visit Now** 🚀</a>
+
+<a href = "https://nagrajhiremath.github.io/BankInterest-JavaScriptAss/">**Visit Now** 🚀</a>
